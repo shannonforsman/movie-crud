@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <div class="red"></div>
+  <div class="red"></div>
+  <header><h1>Shannon's <br>Movie Ratings</h1><nav><a href='/'>home</a><a href='/movies'>movies</a></nav></header> <main>
+    <div class="column-third"><img src="{{posterUrl}}" alt="" /></div>
+
+    <div class="column">
+      <p><strong>Title: </strong> {{title}}</p>
+      <p><strong>Director: </strong> {{director}}</p>
+        <p><strong>Year: </strong> {{year}}</p>
+        <p><strong>Rating: </strong> {{rating}}</p>
+        <a class = 'button' href="/movies/{{_id}}/edit">Edit {{title}}</a>
+
+        </div>
+
+  </main>
+</body>
+</html>
