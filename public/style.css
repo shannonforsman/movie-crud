@@ -50,9 +50,7 @@ html body {
 .red {
   width: 100%;
   height: 100%;
-  position: absolute;
-/*   background: rgba(215, 49, 0, 0.66);
- */
+  position: fixed;
  top: 0;
  background: rgb(215,49,0); /* Old browsers */
  background: -moz-radial-gradient(center, ellipse cover, rgba(215,49,0,.5) 0%, rgba(183,27,0,.7) 100%); /* FF3.6+ */
@@ -293,6 +291,8 @@ input {
 		display: block;
     text-align: left;
     width: 100%;
+    overflow: hidden;
+    position: relative;
 	}
 
   thead tr {
@@ -301,18 +301,39 @@ input {
   left: -9999px;
   }
 
-  tr { border: 1px solid #ccc; }
+  tr { border-bottom: 1px solid #ccc; margin-bottom: 16px; }
 
-	td {
-		/* Behave  like a "row" */
+	table td {
+		padding: 0 0 0 130px;
 		border: none;
-		border-bottom: 1px solid #eee;
 		position: relative;
-		padding-left: 50%;
 	}
 
+  td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4)  {
+    width: 80%;
+    float: left;
+  }
+
+  td:nth-child(5), td:nth-child(6) {
+    width: 10%;
+    position: relative;
+    float: right;
+    padding-left: 0;
+  }
+
+  td:nth-child(6) {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  td:nth-child(6) form {
+    padding: 0;
+  }
+
+
+
   td:before {
-		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
@@ -321,4 +342,16 @@ input {
 		padding-right: 10px;
 		white-space: nowrap;
 	}
+  td:nth-child(1):before {
+    content: 'Title'
+  }
+  td:nth-child(2):before {
+    content: 'Director'
+  }
+  td:nth-child(3):before {
+    content: 'Year'
+  }
+  td:nth-child(4):before {
+    content: 'Rating'
+  }
 }
